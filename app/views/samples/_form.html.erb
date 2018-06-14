@@ -21,7 +21,8 @@
     <%= form.text_field :location %>
   </div>
 
-  <div class="actions">
+  <div class="actions" data-controller='samples'>
     <%= form.submit %>
+    <%= button_tag type: 'button', data: { action: 'click->samples#log' } do %>Hide Name<% end %>
   </div>
 <% end %>
