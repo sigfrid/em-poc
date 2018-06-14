@@ -11,18 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+  <div data-controller='samples' data-samples-placeholder='Bruce Wayne'>
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name, autocomplete: :off, autocorrect: :off, autocapitalize: :none, data: { target: 'samples.textfield' } %>
+    </div>
 
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location %>
-  </div>
+    <div class="field">
+      <%= form.label :location %>
+      <%= form.text_field :location %>
+    </div>
 
-  <div class="actions" data-controller='samples'>
-    <%= form.submit %>
-    <%= button_tag type: 'button', data: { action: 'click->samples#log' } do %>Hide Name<% end %>
-  </div>
+    <div class="actions">
+      <%= form.submit %>
+      <%= button_tag type: 'button', data: { action: 'click->samples#toggle' } do %>Hide Name<% end %>
+    </div>
+</div>
 <% end %>
