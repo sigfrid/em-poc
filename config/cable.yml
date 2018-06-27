@@ -1,5 +1,5 @@
 development:
-  adapter: async
+  adapter: postgresql
   #url: postgres://localhost/pg_notify_poc
 
 test:

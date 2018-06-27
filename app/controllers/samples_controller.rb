@@ -28,7 +28,6 @@ class SamplesController < ApplicationController
 
     respond_to do |format|
       if @sample.save
-        ActionCable.server.broadcast 'notifications_channel', message: 'Hello World!'
         format.html { redirect_to @sample, notice: 'Sample was successfully created.' }
         format.json { render :show, status: :created, location: @sample }
       else
