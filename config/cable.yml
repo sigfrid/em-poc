@@ -1,11 +1,11 @@
 development:
-  adapter: postgresql
-  url: postgres://localhost/pg_notify_poc
+  adapter: async
+  #url: postgres://localhost/pg_notify_poc
 
 test:
   adapter: async
 
 production:
   adapter: postgresql
-  url: <%= ENV['DATABASE_URL'] %>
-  channel_prefix: pg-notify-poc_production
+  #url: <%= ENV['DATABASE_URL'] %>
+  #channel_prefix: pg-notify-poc_production
