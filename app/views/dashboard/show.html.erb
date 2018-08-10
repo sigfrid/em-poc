@@ -1,0 +1,9 @@
+
+<div data-controller='dash'>
+  <div>
+    <%= select_tag 'state', options_from_collection_for_select(@states, "name", "name"), prompt: 'STATE', data: { action: 'change->dash#change', target: 'dash.state' } %>
+  </div>
+  <div>
+    <%= select_tag 'city', options_for_select(@cities.map{ |city| [city.name, city.name, data: { dash_state: city.state }] }), prompt: 'CITY', data: { target: 'dash.city' } %>
+  </div>
+</div>
